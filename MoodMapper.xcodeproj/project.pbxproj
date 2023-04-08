@@ -12,6 +12,7 @@
 		B959AAF029DDD0BA00AF918D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B959AAEF29DDD0BA00AF918D /* Preview Assets.xcassets */; };
 		B959AAF829DDD0F100AF918D /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959AAF729DDD0F100AF918D /* MoodView.swift */; };
 		B959AAFB29DDD12E00AF918D /* MoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959AAFA29DDD12E00AF918D /* MoodItem.swift */; };
+		B9D0B58729E1F983004138D0 /* dbmm.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9D0B58629E1F983004138D0 /* dbmm.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		B959AAEF29DDD0BA00AF918D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B959AAF729DDD0F100AF918D /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		B959AAFA29DDD12E00AF918D /* MoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodItem.swift; sourceTree = "<group>"; };
+		B9D0B58629E1F983004138D0 /* dbmm.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dbmm.sqlite; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				B959AAFA29DDD12E00AF918D /* MoodItem.swift */,
+				B9D0B58629E1F983004138D0 /* dbmm.sqlite */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D0B58729E1F983004138D0 /* dbmm.sqlite in Resources */,
 				B959AAF029DDD0BA00AF918D /* Preview Assets.xcassets in Resources */,
 				B959AAED29DDD0BA00AF918D /* Assets.xcassets in Resources */,
 			);
