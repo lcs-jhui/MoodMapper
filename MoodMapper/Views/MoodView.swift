@@ -5,14 +5,18 @@
 //  Created by Justin Hui on 5/4/2023.
 //
 
+import Blackbird
 import SwiftUI
 
 struct MoodView: View {
     
     //MARK: Stored Properties
     
+    
     //List of moods
-    @State var moodItems: [MoodItem] = existingMoodItems
+    @BlackbirdLiveModels({ dbmm in
+        try await MoodItem.read(from: dbmm)
+    }) var moodItems
     
     //Current item being added
     @State var newMood: String = ""
@@ -55,7 +59,7 @@ struct MoodView: View {
                 }
                 .padding(20)
                 
-                List (moodItems) { currentItem in
+                List (moodItems.results) { currentItem in
                     
                         Text(currentItem.mood)
                     

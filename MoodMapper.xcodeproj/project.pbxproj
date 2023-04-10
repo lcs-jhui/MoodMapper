@@ -13,6 +13,8 @@
 		B959AAF829DDD0F100AF918D /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959AAF729DDD0F100AF918D /* MoodView.swift */; };
 		B959AAFB29DDD12E00AF918D /* MoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B959AAFA29DDD12E00AF918D /* MoodItem.swift */; };
 		B9D0B58729E1F983004138D0 /* dbmm.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = B9D0B58629E1F983004138D0 /* dbmm.sqlite */; };
+		B9D0B58A29E1F9E5004138D0 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = B9D0B58929E1F9E5004138D0 /* Blackbird */; };
+		B9D0B58D29E1FA21004138D0 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D0B58C29E1FA21004138D0 /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,7 @@
 		B959AAF729DDD0F100AF918D /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		B959AAFA29DDD12E00AF918D /* MoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodItem.swift; sourceTree = "<group>"; };
 		B9D0B58629E1F983004138D0 /* dbmm.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = dbmm.sqlite; sourceTree = SOURCE_ROOT; };
+		B9D0B58C29E1FA21004138D0 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D0B58A29E1F9E5004138D0 /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				B959AAE829DDD0B700AF918D /* MoodMapperApp.swift */,
+				B9D0B58B29E1FA05004138D0 /* Helpers */,
 				B959AAF929DDD0FA00AF918D /* Model */,
 				B959AAF629DDD0CC00AF918D /* Views */,
 				B959AAEC29DDD0BA00AF918D /* Assets.xcassets */,
@@ -89,6 +94,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B9D0B58B29E1FA05004138D0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B9D0B58C29E1FA21004138D0 /* AppDatabase.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,6 +118,9 @@
 			dependencies = (
 			);
 			name = MoodMapper;
+			packageProductDependencies = (
+				B9D0B58929E1F9E5004138D0 /* Blackbird */,
+			);
 			productName = MoodMapper;
 			productReference = B959AAE529DDD0B700AF918D /* MoodMapper.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +149,9 @@
 				Base,
 			);
 			mainGroup = B959AADC29DDD0B700AF918D;
+			packageReferences = (
+				B9D0B58829E1F9E5004138D0 /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = B959AAE629DDD0B700AF918D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -162,6 +181,7 @@
 			files = (
 				B959AAE929DDD0B700AF918D /* MoodMapperApp.swift in Sources */,
 				B959AAF829DDD0F100AF918D /* MoodView.swift in Sources */,
+				B9D0B58D29E1FA21004138D0 /* AppDatabase.swift in Sources */,
 				B959AAFB29DDD12E00AF918D /* MoodItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +383,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B9D0B58829E1F9E5004138D0 /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B9D0B58929E1F9E5004138D0 /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9D0B58829E1F9E5004138D0 /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B959AADD29DDD0B700AF918D /* Project object */;
 }
