@@ -12,6 +12,8 @@ struct MoodView: View {
     
     //MARK: Stored Properties
     
+    //Access the connection to the database (needed to add a new record)
+    @Environment(\.blackbirdDatabase) var dbmm: Blackbird.Database?
     
     //List of moods
     @BlackbirdLiveModels({ dbmm in
@@ -36,20 +38,15 @@ struct MoodView: View {
                     
                     Button(action: {
                         
-                        //Get last item ID
-                        let lastId = moodItems.last!.id
-                        
-                        //Create the new item ID
-                        let newId = lastId + 1
-                        
-                        //New mood item
-                        let newMoodItem = MoodItem(id: newId, mood: newMood)
-                        
-                        //Add the new item to the list
-                        moodItems.append(newMoodItem)
-                        
-                        //Clear input field
-                        newMood = ""
+                        Task{
+                            //Write to database
+                            try await dbmm!.transaction { core in
+                                try core.query("INSERT INTO MoodItem (description) VALUES (?)", newMood)
+                            }
+                            
+                            //Clear the input field
+                            newMood = ""
+                        }
                         
                     }, label: {
                         Image(systemName: "plus.circle")
@@ -61,7 +58,7 @@ struct MoodView: View {
                 
                 List (moodItems.results) { currentItem in
                     
-                        Text(currentItem.mood)
+                        Text(currentItem.description)
                     
                 }
                 

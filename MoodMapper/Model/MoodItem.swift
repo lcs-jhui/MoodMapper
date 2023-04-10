@@ -5,25 +5,12 @@
 //  Created by Justin Hui on 5/4/2023.
 //
 
+import Blackbird
 import Foundation
 
-struct MoodItem: Identifiable{
-    var id: Int
-    var mood: String
+struct MoodItem: BlackbirdModel {
+    @BlackbirdColumn var id: Int
+    @BlackbirdColumn var description: String
+    @BlackbirdColumn var completed: Bool
 }
 
-var existingMoodItems = [
-
-    MoodItem(id: 1, mood: "😃 HAPPY")
-    
-    ,
-
-    MoodItem(id: 2, mood: "😃 SAD")
-    
-    ,
-
-    MoodItem(id: 3, mood: "😃 ANGRY")
-    
-    ,
-
-]
