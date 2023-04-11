@@ -56,14 +56,40 @@ struct MoodView: View {
                 }
                 .padding(20)
                 
-                List (moodItems.results) { currentItem in
+                List {
                     
+                    ForEach (moodItems.results) { currentItem in
+                        
                         Text(currentItem.description)
-                    
+                        
+                    }.onDelete(perform: removeRows)
                 }
                 
             }
             .navigationTitle("Mood Mapper")
+        }
+    }
+    
+    //MARK: Functions
+    func removeRows(at offsets: IndexSet) {
+        
+        Task{
+            try await dbmm!.transaction { core in
+                
+                //Get ID of item to be deleted
+                var idList = ""
+                for offset in offsets {
+                    idList += "\(moodItems.results[offset].id),"
+                }
+                
+                //Remove final comma
+                print(idList)
+                idList.removeLast()
+                print(idList)
+                
+                //Delete the row from the database
+                try core.query("DELETE FROM MoodItem WHERE id IN (?)", idList)
+            }
         }
     }
 }
@@ -71,5 +97,6 @@ struct MoodView: View {
 struct MoodView_Previews: PreviewProvider {
     static var previews: some View {
         MoodView()
+            .environment(\.blackbirdDatabase, AppDatabase.instance)
     }
 }

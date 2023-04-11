@@ -37,7 +37,7 @@ struct AppDatabase {
             if !fileManager.fileExists(atPath: dbPath) {
 
                 print("Database does not already exist. Instead, we are going to attempt to copy from the bundle resource path of:")
-                let dbResourcePath = Bundle.main.path(forResource: "db", ofType: "sqlite")!
+                let dbResourcePath = Bundle.main.path(forResource: "dbmm", ofType: "sqlite")!
                 print(dbResourcePath)
 
                 try fileManager.copyItem(atPath: dbResourcePath, toPath: dbPath)
